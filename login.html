@@ -52,13 +52,14 @@
 			    alert(email);
 			    alert(password);
 
-				Parse.User.logIn("email", "password").then(function(user) {
-					  return query.find();
-					}).then(function(results) {
-					  return results[0].save({ key: value });
-					}).then(function(result) {
-					  // the object was saved.
-					});
+				Parse.User.logIn(email, password, {
+				    success: function(user) {
+				        alert('Welcome!');
+				    },
+				    error: function(user, error) {
+				        console.log(error);
+				    }
+				});
 			}
 		    </script>
 
