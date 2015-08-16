@@ -52,7 +52,7 @@
 				function User () {
 
 					var varName = document.getElementById('email').value;
-					var user = new Parse.User();
+					var user = new Parse._User();
 					user.set("email", varName);
 					alert("You have been signed up! Look out for some updates coming your way soon.");
 			}
