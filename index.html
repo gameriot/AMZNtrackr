@@ -26,7 +26,7 @@
 			</header>
 
 		<!-- Signup Form -->
-			<form onsubmit="User()" id="signup-form" method="post">
+			<form onsubmit="return Notification();" id="signup-form" method="post">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
 			</form>
@@ -49,12 +49,17 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-				function User () {
+				function Notification () {
 
 					var varName = document.getElementById('email').value;
-					var user = new Parse._User();
-					user.set("email", varName);
-					alert("You have been signed up! Look out for some updates coming your way soon.");
+
+					var Notifications = Parse.Object.extend("Notifications");
+					var testObject = new Notifications();
+					testObject.save({Email: varName}).then(function(object) {
+					  alert("You have been signed up! Look out for some updates coming your way soon.");
+					});
+					window.location.href = "http://gameriot.github.io/"
+
 			}
 				function doSomething() {
 				    alert('Form submitted!');
