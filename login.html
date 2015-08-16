@@ -26,7 +26,7 @@
 			</header>
 
 		<!-- Login Form -->
-			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
+			<form id="signin" method="post">
 				<input type="username" name="username" id="username" placeholder="Username" />
 				<input type="password" name="password" id="password" placeholder="Password" />
 				<input type="submit" value="Login" />
@@ -46,20 +46,30 @@
 			<script type="text/javascript">
 
 			function Login() {
-			    var username = document.getElementById('username').value;
-			    var password = document.getElementById('password').value;
 
-			    alert(username);
-			    alert(password);
-
-				Parse.User.logIn(username, password, {
-				    success: function(user) {
-				        alert('Welcome!');
-				    },
-				    error: function(user, error) {
-				        console.log(error);
-				    }
-				});
+				$('.form-signin').on('submit', function(e) {
+ 
+			    // Prevent Default Submit Event
+			    e.preventDefault();
+			 
+			    // Get data from the form and put them into variables
+			    var data = $(this).serializeArray(),
+			        username = data[0].value,
+			        password = data[1].value;
+			 
+			    // Call Parse Login function with those variables
+			    Parse.User.logIn(username, password, {
+			        // If the username and password matches
+			        success: function(user) {
+			            alert('Welcome!');
+			        },
+			        // If there is an error
+			        error: function(user, error) {
+			            console.log(error);
+			        }
+			    });
+			 
+			});
 			}
 		    </script>
 
