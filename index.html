@@ -52,7 +52,7 @@
 				function Notification () {
 
 					var varName = document.getElementById('email').value;
-
+					alert(varName);
 					var Notifications = Parse.Object.extend("Notifications");
 					var testObject = new Notifications();
 					testObject.save({Email: varName}).then(function(object) {
