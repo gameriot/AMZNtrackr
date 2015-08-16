@@ -44,7 +44,17 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-				
+				Parse.User.logIn("email", "password", {
+			        success: function(user) {
+			            alert("Welcome!");
+			            alert(user);
+			            return true;
+			        },
+			        error: function(user, error) {
+			            alert(user + error);
+			            return false;
+			        }
+			    });
 		    </script>
 
 	</body>
