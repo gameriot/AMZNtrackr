@@ -1059,8 +1059,10 @@
 
 		#signup-form input[type="text"],
 		#signup-form input[type="password"],
-		#signup-form input[type="email"] {
+		#signup-form input[type="email"],
+		#signup-form input[type="username"] {
 			width: 18em;
+		}
 		}
 
 		#signup-form > * {
@@ -1082,7 +1084,8 @@
 
 				#signup-form input[type="type"],
 				#signup-form input[type="password"],
-				#signup-form input[type="email"] {
+				#signup-form input[type="email"],
+				#signup-form input[type="username"] {
 					width: 100%;
 				}
 
