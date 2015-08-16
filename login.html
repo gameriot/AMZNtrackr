@@ -49,15 +49,12 @@
 			    var username = document.getElementById('username').value;
 			    var password = document.getElementById('password').value;
 
-			    alert(username);
-			    alert(password);
-
 				Parse.User.logIn(username, password, {
 				    success: function(user) {
 				        alert('Welcome!');
 				    },
 				    error: function(user, error) {
-				        alert(error);
+				        alert("Sorry but there was an error!");
 				    }
 				});
 			}
