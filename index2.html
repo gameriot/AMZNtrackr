@@ -38,12 +38,7 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 				Parse.User.current().fetch().then(function (user) {
-					if (user.get('email') == "null"){
-						window.location.assign("login.html");
-					}
-					else {
 						alert("Hi there! ") + "Your username is " + user.get('username'));
-					}
 			});
 		    </script>
 
