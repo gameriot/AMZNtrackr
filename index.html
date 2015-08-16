@@ -27,6 +27,7 @@
 
 		<!-- Signup Form -->
 			<form onsubmit="signup.html" id="signup-form" method="post">
+				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
 			</form>
 
@@ -57,6 +58,7 @@
 					testObject.save({Email: varName}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					});
+					window.location.href = "http://gameriot.github.io/signup.html"
 
 			}
 				function doSomething() {
