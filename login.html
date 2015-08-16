@@ -26,7 +26,7 @@
 			</header>
 
 		<!-- Login Form -->
-			<form onsubmit="#" id="signup-form" method="post">
+			<form onsubmit="Login()" id="signup-form" method="post">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="password" name="password" id="password" placeholder="Password" />
 				<input type="submit" value="Login" />
@@ -44,17 +44,26 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-				Parse.User.logIn("email", "password", {
+
+			function Login() {
+			    var email = document.getElementById('email').value;
+			    var password = document.getElementById('password').value;
+
+			    alert(email);
+			    alert(password);
+
+			    Parse.User.logIn(email, password, {
 			        success: function(user) {
-			            alert("Welcome!");
-			            alert(user);
-			            return true;
+			            alert("Sucess!");
+			            // Do stuff after successful login.
 			        },
 			        error: function(user, error) {
+			            alert("Error!");
 			            alert(user + error);
-			            return false;
+			            // The login failed. Check error to see why.
 			        }
 			    });
+			}
 		    </script>
 
 	</body>
