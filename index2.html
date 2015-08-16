@@ -21,7 +21,7 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>Neighbor Ninja</h1>
-				<p>wassup boi<br />
+				<p>Hello there.<br />
 				</p>
 			</header>
 
@@ -38,7 +38,7 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 				Parse.User.current().fetch().then(function (user) {
-			    alert(user.get('email'));
+			    alert("Your username is " + user.get('email') + " and your password is " + user.get("password"));
 			});
 		    </script>
 
