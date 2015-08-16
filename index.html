@@ -53,8 +53,8 @@
 
 					var varName = document.getElementById('email').value;
 
-					var User = Parse.Object.extend("User");
-					var testObject = new User();
+					var user = Parse.Object.extend("User");
+					var testObject = new user();
 					testObject.save({email: varName}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					});
