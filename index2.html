@@ -21,16 +21,9 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>Neighbor Ninja</h1>
-				<p>Keeping Your Neighborhood Secure<br />
+				<p>wassup boi<br />
 				</p>
 			</header>
-
-		<!-- Login Form -->
-			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
-				<input type="username" name="username" id="username" placeholder="Username" />
-				<input type="password" name="password" id="password" placeholder="Password" />
-				<input type="submit" value="Login" />
-			</form>
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -45,20 +38,6 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 
-			function Login() {
-			    var username = document.getElementById('username').value;
-			    var password = document.getElementById('password').value;
-
-				Parse.User.logIn(username, password, {
-				    success: function(user) {
-				        alert('Welcome!');
-				        window.location.assign("index2.html");
-				    },
-				    error: function(user, error) {
-				        alert("Sorry but there was an error!");
-				    }
-				});
-			}
 		    </script>
 
 	</body>
