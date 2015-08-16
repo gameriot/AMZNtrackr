@@ -37,8 +37,11 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-				var currentUser = Parse.User.current();
-				alert(currentUser.save);
+				user.fetch().then(function(fetchedUser){
+				    var name = fetchedUser.getUsername();
+				}, function(error){
+				    //Handle the error
+				});
 		    </script>
 
 	</body>
