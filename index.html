@@ -21,26 +21,27 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>Neighbor Ninja</h1>
-				<p>Keeping Your Neighborhood Safe<br />
+				<p>looking out for you<br />
+				and your loved ones
 				</p>
 			</header>
 
 		<!-- Signup Form -->
-			<form onsubmit="Notification();" id="signup-form" method="post">
+			<form onsubmit="return Notification();" id="signup-form" method="post">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
 			</form>
 
-			<!-- Login Form -->
-			<form onsubmit="#" id="signup-form" method="post">
-				<input type="username" name="username" id="username" placeholder="Username" />
-				<input type="submit" value="Login" />
-			</form>
-
 		<!-- Footer -->
 			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
 				<ul class="copyright">
-					<li>&copy; Neighbor Ninja 2015</li>
+					<li>&copy; Neighbor Ninja</li>
 				</ul>
 			</footer>
 
@@ -52,13 +53,18 @@
 				function Notification () {
 
 					var varName = document.getElementById('email').value;
+
 					var Notifications = Parse.Object.extend("Notifications");
-					var notifications = new Notifications();
-					notifications.save({Email: varName}).then(function(object) {
+					var testObject = new Notifications();
+					testObject.save({Email: varName}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					});
-					window.location.href = "http://gameriot.github.io/"
 
+			}
+				function doSomething() {
+				    alert('Form submitted!');
+				    return false;
+				}
 		    </script>
 
 	</body>
