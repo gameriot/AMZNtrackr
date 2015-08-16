@@ -44,16 +44,16 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 				function Notification () {
-
 					var varName = document.getElementById('email').value;
 
+					if (varName.length > 5) {
 					var Notifications = Parse.Object.extend("Notifications");
 					var testObject = new Notifications();
 					testObject.save({Email: varName}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					});
 
-			}
+			}}
 				function doSomething() {
 				    alert('Form submitted!');
 				    return false;
