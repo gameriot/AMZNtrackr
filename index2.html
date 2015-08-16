@@ -39,7 +39,13 @@
 			<script type="text/javascript">
 				Parse.User.current().fetch().then(function (user) {
 						alert("Hi there! Your username is " + user.get('username') + ".");
-			});
+				});
+				var currentUser = Parse.User.current();
+				if (currentUser) {
+				    alert("I'm glad to meet you.");
+				} else {
+				    window.location.assign("login.html");
+				}
 		    </script>
 
 	</body>
