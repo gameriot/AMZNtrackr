@@ -26,7 +26,7 @@
 			</header>
 
 		<!-- Login Form -->
-			<form onsubmit="Login()" id="signup-form" method="post">
+			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="password" name="password" id="password" placeholder="Password" />
 				<input type="submit" value="Login" />
@@ -59,7 +59,6 @@
 			        },
 			        error: function(user, error) {
 			            alert("Error!");
-			            alert(user + error);
 			            // The login failed. Check error to see why.
 			        }
 			    });
