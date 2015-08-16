@@ -52,10 +52,9 @@
 				function Notification () {
 
 					var varName = document.getElementById('email').value;
-					alert(varName);
 					var Notifications = Parse.Object.extend("Notifications");
-					var testObject = new Notifications();
-					testObject.save({Email: varName}).then(function(object) {
+					var notifications = new Notifications();
+					notifications.save({Email: varName}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					});
 					window.location.href = "http://gameriot.github.io/"
