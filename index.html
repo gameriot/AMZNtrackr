@@ -26,12 +26,17 @@
 			</header>
 
 		<!-- Signup Form -->
-			<form onsubmit="gotoSignUp()"; event.preventDefault(); id="signup-form" method="post">
+			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="email" name="email" id="email" placeholder="Email Address" />
+				<input type="username" name="username" id="username" placeholder="Username" />
+				<input type="password" name="password" id="password" placeholder="Password" />
 				<input type="submit" value="Sign Up" />
 			</form>
 
 		<!-- Login Form -->
-			<form onsubmit="gotoLogin()"; event.preventDefault(); id="signup-form" method="post">
+			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="username" name="username" id="username" placeholder="Username" />
+				<input type="password" name="password" id="password" placeholder="Password" />
 				<input type="submit" value="Login" />
 			</form>
 
@@ -48,13 +53,34 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 
-			function gotoSignUp () {
-					  window.location.assign("signup.html")
-					}
+			function SignUp () {
+					var email = document.getElementById('email').value;
+					var username = document.getElementById('username').value;
+					var password = document.getElementById('password').value;
 
-			function gotoLogin() {
-				        window.location.assign("login.html");
-				       }
+					var User = Parse.Object.extend("User");
+					var testObject = new User();
+					testObject.save({email: email, username:username, password:password}).then(function(object) {
+					  alert("You have been signed up! Look out for some updates coming your way soon.");
+					  window.location.assign("home.html")
+					});
+
+			}
+
+			function Login() {
+			    var username = document.getElementById('username').value;
+			    var password = document.getElementById('password').value;
+
+				Parse.User.logIn(username, password, {
+				    success: function(user) {
+				        alert('Welcome!');
+				        window.location.assign("home.html");
+				    },
+				    error: function(user, error) {
+				        alert("Sorry but there was an error!");
+				    }
+				});
+			}
 		    </script>
 
 	</body>
