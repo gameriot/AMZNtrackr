@@ -24,6 +24,10 @@
 				</p>
 			</header>
 
+		<form onsubmit=" Parse.User.logOut()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="submit" value="Log Out" />
+			</form>
+
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="copyright">
@@ -40,7 +44,7 @@
 				$(window).bind('beforeunload', function() {
  					 Parse.User.logOut();
 				}
-				
+
 				Parse.User.current().fetch().then(function (user) {
 						alert("Hi there! Your username is " + user.get('username') + ".");
 				});
