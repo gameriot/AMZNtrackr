@@ -33,8 +33,11 @@
 				<input type="submit" value="Sign Up" />
 			</form>
 
+			<!-- Login Form -->
 			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
-				<input type="submit" value="Log In" />
+				<input type="username" name="username" id="name" placeholder="Username" />
+				<input type="password" name="password" id="pass" placeholder="Password" />
+				<input type="submit" value="Login" />
 			</form>
 
 		<!-- Footer -->
@@ -49,11 +52,21 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-
-			function Login () {
-				window.location.href("login.html");
-			}
 			
+			function Login() {
+			    var username = document.getElementById('name').value;
+			    var password = document.getElementById('pass').value;
+				Parse.User.logIn(username, password, {
+				    success: function(user) {
+				        alert('Welcome!');
+				        window.location.assign("home.html");
+				    },
+				    error: function(user, error) {
+				        alert("Sorry but there was an error!");
+				    }
+				});
+			}
+
 			function SignUp () {
 					var email = document.getElementById('email').value;
 					var username = document.getElementById('username').value;
