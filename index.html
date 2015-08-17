@@ -31,7 +31,7 @@
 			</form>
 
 		<!-- Login Form -->
-			<form onsubmit="gotoLogin()"; event.preventDefault(); id="signup-form" method="post">
+			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
 				<input type="submit" value="Log In" />
 			</form>
 
@@ -50,7 +50,8 @@
 			function SignUp () {
 				window.location.assign("signup.html");
 			}
-			function gotoLogin() {
+
+			function Login () {
 				window.location.href("login.html");
 			}
 		    </script>
