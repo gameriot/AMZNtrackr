@@ -56,10 +56,14 @@
 					testObject.save({email: email, username:username, password:password}).then(function(object) {
 					  alert("You have been signed up! Look out for some updates coming your way soon.");
 					  window.location.assign("home.html")
-					};
+					});
 
 			}
 
+			function doSomething() {
+				    alert('Form submitted!');
+				    return false;
+				}
 		    </script>
 
 		    </script>
