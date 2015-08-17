@@ -53,8 +53,8 @@
 			<script type="text/javascript">
 
 			function Login() {
-			    var username = document.getElementById('name').value;
-			    var password = document.getElementById('pass').value;
+			    var username = document.getElementById('username').value;
+			    var password = document.getElementById('password').value;
 				Parse.User.logIn(username, password, {
 				    success: function(user) {
 				        alert('Welcome!');
