@@ -26,9 +26,13 @@
 			</header>
 
 		<!-- Signup Form -->
-			<form onsubmit="return Notification();" id="signup-form" method="post">
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="submit" value="Sign Up for Updates" />
+			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="submit" value="Sign Up" />
+			</form>
+
+		<!-- Login Form -->
+			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="submit" value="Login" />
 			</form>
 
 		<!-- Footer -->
@@ -43,19 +47,12 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
-				function Notification () {
-					var varName = document.getElementById('email').value;
-					var Notifications = Parse.Object.extend("Notifications");
-					var testObject = new Notifications();
-					testObject.save({Email: varName}).then(function(object) {
-					  alert("You have been signed up! Look out for some updates coming your way soon.");
-					});
-
+			function SignUp () {
+				window.location.assign("signup.html");
 			}
-				function doSomething() {
-				    alert('Form submitted!');
-				    return false;
-				}
+			function Login() {
+				window.location.assign("login.html");
+			}
 		    </script>
 
 	</body>
