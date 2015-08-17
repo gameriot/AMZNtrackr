@@ -56,14 +56,14 @@
 			    var username = document.getElementById('username').value;
 			    var password = document.getElementById('password').value;
 				Parse.User.logIn(username, password, {
-   					success: function(user) {
-        			alert('Welcome!');
-    			},
-    				error: function(user, error) {
-        			alert("Uh oh...");
-    				}
+				    success: function(user) {
+				        alert('Welcome!');
+				        window.location.assign("home.html");
+				    },
+				    error: function(user, error) {
+				        alert("Sorry but there was an error!");
+				    }
 				});
-
 			}
 
 			function SignUp () {
