@@ -36,6 +36,11 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
+
+				$(window).bind('beforeunload', function() {
+ 					 Parse.User.logOut();
+				}
+				
 				Parse.User.current().fetch().then(function (user) {
 						alert("Hi there! Your username is " + user.get('username') + ".");
 				});
