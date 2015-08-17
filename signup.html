@@ -33,6 +33,10 @@
 				<input type="submit" value="Sign Up" />
 			</form>
 
+			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="submit" value="Log In" />
+			</form>
+
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="copyright">
@@ -45,6 +49,11 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
+
+			function Login () {
+				window.location.href("login.html");
+			}
+			
 			function SignUp () {
 					var email = document.getElementById('email').value;
 					var username = document.getElementById('username').value;
