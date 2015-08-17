@@ -26,13 +26,13 @@
 			</header>
 
 		<!-- Signup Form -->
-			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form" method="post">
+			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form">
 				<input type="submit" value="Sign Up" />
 			</form>
 
 		<!-- Login Form -->
-			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
-				<input type="submit" value="Login" />
+			<form onsubmit="Login()"; id="signup-form">
+				<input type="submit" value="Log In" />
 			</form>
 
 		<!-- Footer -->
@@ -49,6 +49,9 @@
 			<script type="text/javascript">
 			function SignUp () {
 				window.location.assign("signup.html");
+			}
+			function Login() {
+				window.location.assign("login.html");
 			}
 		    </script>
 
