@@ -53,8 +53,8 @@
 			<script type="text/javascript">
 
 			function Login() {
-			    var username = document.getElementById('username').value;
-			    var password = document.getElementById('password').value;
+			    var username = $('#username').val();
+			    var password = $('#password').val();
 				Parse.User.logIn(username, password, {
 				    success: function(user) {
 				        alert('Welcome!');
@@ -67,9 +67,9 @@
 			}
 
 			function SignUp () {
-					var email = document.getElementById('email').value;
-					var username = document.getElementById('username').value;
-					var password = document.getElementById('password').value;
+					var email = $('#email').val();
+					var username = $('#username').val();
+					var password = $('#password').val();
 					var User = Parse.Object.extend("User");
 					var testObject = new User();
 					testObject.save({email: email, username:username, password:password}).then(function(object) {
