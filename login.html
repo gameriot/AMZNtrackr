@@ -27,8 +27,8 @@
 
 		<!-- Login Form -->
 			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
-				<input type="username" name="username" id="username" placeholder="Username" />
-				<input type="password" name="password" id="password" placeholder="Password" />
+				<input type="username" name="username" id="name" placeholder="Username" />
+				<input type="password" name="password" id="pass" placeholder="Password" />
 				<input type="submit" value="Login" />
 			</form>
 
@@ -46,8 +46,8 @@
 			<script type="text/javascript">
 
 			function Login() {
-			    var username = document.getElementById('username').value;
-			    var password = document.getElementById('password').value;
+			    var username = document.getElementById('name').value;
+			    var password = document.getElementById('pass').value;
 
 				Parse.User.logIn(username, password, {
 				    success: function(user) {
