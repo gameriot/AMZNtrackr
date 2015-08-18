@@ -27,15 +27,15 @@
 		<!-- Signup Form -->
 			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form" method="post">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="username" name="username" id="username" placeholder="Username" />
-				<input type="password" name="password" id="password" placeholder="Password" />
+				<input type="username" name="username" id="signup-username" placeholder="Username" />
+				<input type="password" name="password" id="signup-password" placeholder="Password" />
 				<input type="submit" value="Sign Up" />
 			</form>
 
 			<!-- Login Form -->
 			<form onsubmit="Login()"; event.preventDefault(); id="signup-form" method="post">
-				<input type="username" name="username" id="usernam" placeholder="Username" />
-				<input type="password" name="password" id="passwor" placeholder="Password" />
+				<input type="username" name="username" id="login-username" placeholder="Username" />
+				<input type="password" name="password" id="login-password" placeholder="Password" />
 				<input type="submit" value="Login" />
 			</form>
 
@@ -52,10 +52,20 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 
+			function Login(){
+				Parse.User.logIn(username, password, {
+				  success: function(user) {
+				    alert("success");
+				  },
+				  error: function(user, error) {
+				    alerT("error");
+				  }
+				});
+			}
 
-			function Login() {
-			    var username = document.getElementById('usernam').value;
-			    var password = document.getElementById('passwor').value;
+			/*function Login() {
+			    var username = document.getElementById('login-username').value;
+			    var password = document.getElementById('login-password').value;
 			    alert(username);
 			    alert(password);
 				Parse.User.logIn(username, password, {
@@ -67,12 +77,12 @@
 				        alert("Sorry but there was an error!");
 				    }
 				});
-			}
+			}*/
 
 			function SignUp () {
 					var email = document.getElementById('email').value;
-					var username = document.getElementById('username').value;
-					var password = document.getElementById('password').value;
+					var username = document.getElementById('signup-username').value;
+					var password = document.getElementById('signup-password').value;
 					var User = Parse.Object.extend("User");
 					var testObject = new User();
 					testObject.save({email: email, username:username, password:password}).then(function(object) {
