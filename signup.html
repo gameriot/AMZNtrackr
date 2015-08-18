@@ -52,20 +52,7 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript">
 
-			function Login(){
-				var username = document.getElementById('login-username').value;
-			    var password = document.getElementById('login-password').value;
-				Parse.User.logIn(username, password, {
-				  success: function(user) {
-				    alert("success");
-				  },
-				  error: function(user, error) {
-				    alerT("error");
-				  }
-				});
-			}
-
-			/*function Login() {
+			function Login() {
 			    var username = document.getElementById('login-username').value;
 			    var password = document.getElementById('login-password').value;
 			    alert(username);
@@ -79,7 +66,7 @@
 				        alert("Sorry but there was an error!");
 				    }
 				});
-			}*/
+			}
 
 			function SignUp () {
 					var email = document.getElementById('email').value;
