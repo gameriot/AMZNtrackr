@@ -20,7 +20,7 @@
 					<section id="main">
 						<header>
 							<h1>Welcome</h1>
-							<p>Search for a product you would like to track.</p>
+							<p>Search for a product you would like to track. <br> We will notify you if there are any changes in its price.</p>
 							<p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
 							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
 							<p><input type="button" value="track" onclick="Submit()" /></p>
@@ -30,7 +30,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<ul class="copyright">
+						<ul class="credits">
 							<li>Samast Varma, Varad Nevasekar, Saurav Chhatrapati</li>
 						</ul>
 					</footer>
@@ -43,8 +43,8 @@
 				function Submit() {
 								var name = document.getElementById("itemname").value;
 								var email = document.getElementById("email").value;
-								window.alert(name);
-								window.alert(email);
+								window.alert("You have said your name is " + name + ".");
+								window.alert("You have said your email is " + email + ".");
 								window.location="trackpage.html"
 								}
 
