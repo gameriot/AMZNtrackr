@@ -23,7 +23,7 @@
 							<p>Search for a product you would like to track.</p>
 							<p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
 							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
-							<p><input type="button" value="track" onclick= "Submit();" /></p>
+							<p><input type="button" value="track" onclick="Submit()" /></p>
 
 						</header>
 					</section>
@@ -40,17 +40,17 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
+				function Submit() {
+								var name = document.getElementById("itemname").value;
+								var email = document.getElementById("email").value;
+								window.alert(name);
+								window.alert(email);
+								}
+
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
-
-				function Submit() {
-							var name = document.getElementbyId("itemname").value;
-							var email = document.getElementbyId("email").value;
-							window.alert(name);
-							window.alert(email);
-							}
 
 			</script>
 
