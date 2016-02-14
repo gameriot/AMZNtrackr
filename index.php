@@ -24,8 +24,8 @@
 							<h1>Welcome</h1>
 							<p>Search for a product you would like to track. <br> We will notify you if there are any changes in its price.</p>
 							<form action="AmazonSearch.php" method="post">
-							    Product:  <input type="text" name="product" /><br />
-							    Email: <input type="text" name="email" /><br />
+							    <input type="text" name="product" placeholder="Product" /><br />
+							    <input type="text" name="email" placeholder="Email" /><br />
 							    <input type="button" name="submit" value="Search" onclick="Submit()" />
 							</form>
 

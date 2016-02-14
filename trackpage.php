@@ -21,7 +21,7 @@
 						<header>
 							<h1>Choosing your Product</h1>
 							<p>The product you have chosen is</p>
-							<?php include 'AmazonSearch.php';?>
+							<?php require 'AmazonSearch.php';?>
 						</header>
 					</section>
 
@@ -37,6 +37,7 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
+
 				function Submit() {
 								var name = document.getElementById("itemname").value;
 								var email = document.getElementById("email").value;
