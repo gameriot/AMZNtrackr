@@ -91,6 +91,18 @@
   // print($image);
   $name=($file->Items->Item->ItemAttributes->Title);
   // print($name);
+
+            $servername = "localhost";
+            $username = "pi";
+            $password = "codeday";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
 ?>
 
 <!-- Wrapper -->

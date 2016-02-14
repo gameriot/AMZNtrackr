@@ -44,15 +44,26 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
-				// function Submit() {
-				// 	window.location="trackpage.php";
-				// }
 
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
+
+			<?php 
+				$servername = "localhost";
+		        $username = "pi";
+		        $password = "codeday";
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password);
+
+				// Check connection
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				} 
+			?>
 
 
 	</body>
