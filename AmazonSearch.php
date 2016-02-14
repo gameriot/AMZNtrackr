@@ -1,5 +1,7 @@
 <?php
 
+$name=$_GET["name"]
+
 // Your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = "AKIAI2WAASHANPIJSOZA";
 
@@ -17,7 +19,7 @@ $params = array(
     "AWSAccessKeyId" => "AKIAI2WAASHANPIJSOZA",
     "AssociateTag" => "baarha-20",
     "SearchIndex" => "All",
-    "Keywords" => "apple watch",
+    "Keywords" => $name,
     "ResponseGroup" => "Images,ItemAttributes,Offers"
 );
 

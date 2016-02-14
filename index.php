@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
 
+<?php
+$itemname = "";
+?>
 <html>
 	<head>
 		<title>Product Search</title>
 		<meta charset="utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -42,12 +46,18 @@
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
 				function Submit() {
-								var name = document.getElementById("itemname").value;
-								var email = document.getElementById("email").value;
-								window.alert("You have said your name is " + name + ".");
-								window.alert("You have said your email is " + email + ".");
-								window.location="trackpage.html"
-								}
+					var name = document.getElementById("itemname").value;
+					var email = document.getElementById("email").value;
+					window.alert("You have said your name is " + name + ".");
+					window.alert("You have said your email is " + email + ".");
+					//window.location="trackpage.html";
+
+					$.get("http://172.30.3.133/AmazonSearch.php?name="+name, function( data ) {
+					  alert(data);
+					});
+
+
+				}
 
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
