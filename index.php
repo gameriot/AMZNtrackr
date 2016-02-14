@@ -22,29 +22,9 @@
 						<header>
 							<h1>Welcome</h1>
 							<p>Search for a product you would like to track. <br> We will notify you if there are any changes in its price.</p>
-							<table align='left'>
-							<?php
-							    print("
-							      <form name='SearchTerms' action=AmazonSearch.php method='GET'>
-							      <tr><td valign='top'>
-							        <b>Choose a Category</b><br>
-							          <select name='SearchIndex'>
-							            <option value='Books'>Books</option>
-							            <option value='DVD'>DVD</option>
-							            <option value='Music'>Music</option>
-							          </select>
-							      </td></tr>
-							      <tr><td><b>Enter Keywords</b><br><input type='text' name='Keywords' size='40'/></td></tr>
-							      <input type='hidden' name='Action' value='Search'>
-							      <input type='hidden' name='CartId' value=$CartId>
-							      <input type='hidden' name='HMAC' value=$HMAC>
-							      <tr align='center'><td><input type='submit'/></td></tr>
-							      </form> ");
-							?>
-							</table>
-							<!-- <p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
+							<p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
 							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
-							<p><input type="button" value="search" onclick="Submit()" /></p> -->
+							<p><input type="button" value="search" onclick="Submit()" /></p>
 
 						</header>
 					</section>
