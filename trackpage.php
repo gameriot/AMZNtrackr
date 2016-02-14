@@ -20,7 +20,8 @@
 					<section id="track">
 						<header>
 							<h1>Choosing your Product</h1>
-							<p>The product you have chosen is + </p>
+							<p>The product you have chosen is</p>
+							<?php include 'AmazonSearch.php';?>
 						</header>
 					</section>
 

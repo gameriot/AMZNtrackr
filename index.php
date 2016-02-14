@@ -26,7 +26,7 @@
 							<form action="AmazonSearch.php" method="post">
 							    Product:  <input type="text" name="product" /><br />
 							    Email: <input type="text" name="email" /><br />
-							    <input type="submit" name="submit" value="Submit me!" />
+							    <input type="button" name="submit" value="Search" onclick="Submit()" />
 							</form>
 
 							<!-- <p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
@@ -49,13 +49,7 @@
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
 				function Submit() {
-					var name = document.getElementById("itemname").value;
-					var email = document.getElementById("email").value;
-					window.alert("You have said the product name is " + name + ".");
-					window.alert("You have said your email is " + email + ".");
 					window.location="trackpage.html";
-
-
 				}
 
 				if ('addEventListener' in window) {
