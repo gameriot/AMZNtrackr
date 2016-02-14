@@ -78,7 +78,14 @@
   //header('Content-type: text/xml');
   $file = simplexml_load_file($request_url );
   // print($file->Items->Item->ItemLinks->ItemLink->URL);
-  $price=($file->Items->Item->ItemAttributes->ListPrice->FormattedPrice);
+  $price=($file->Items->Item->Offers->Offer->OfferListing->Price->FormattedPrice);
+  $saleprice=($file->Items->Item->Offers->Offer->OfferListing->SalePrice->FormattedPrice);
+  if (isset($saleprice)) {
+    $price=$saleprice;
+  } else {
+  }   
+  
+
   // print($price);
   $image=($file->Items->Item->LargeImage->URL);
   // print($image);
@@ -93,7 +100,10 @@
           <section id="track">
             <header>
               <h1>Choosing your Product</h1>
-              <?php echo "<p>The product you have chosen is ".$name.".</p>";?>
+              <?php echo "<p>The product you have chosen is ".$name.".</p>";
+              echo "<p>Currently, the price is ".$price.".</p>";
+              echo "<img src='".$image."'>"?>
+
             </header>
           </section>
 
