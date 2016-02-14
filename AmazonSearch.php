@@ -46,6 +46,8 @@ $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key,
 // Generate the signed URL
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 
-echo "Signed URL: \"".$request_url."\"";
-
+// echo "Signed URL: \"".$request_url."\"";
+header('Content-type: text/xml');
+$file = file_get_contents($request_url);
+echo $file;
 ?>
