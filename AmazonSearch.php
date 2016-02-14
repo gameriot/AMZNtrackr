@@ -1,35 +1,52 @@
 <?php
 
-//Enter your IDs
-define("Access_Key_ID", "AKIAI2WAASHANPIJSOZA");
-define("Associate_tag", "baarha-20");
+// Your AWS Access Key ID, as taken from the AWS Your Account page
+$aws_access_key_id = "AKIAI2WAASHANPIJSOZA";
 
-//Set up the operation in the request
-function ItemSearch($SearchIndex, $Keywords){
+// Your AWS Secret Key corresponding to the above ID, as taken from the AWS Your Account page
+$aws_secret_key = "gg72F2caTJWTU5OQ+TwqYHZSiSpOKKcTLNBgqp9s";
 
-//Set the values for some of the parameters
-$Operation = "ItemSearch";
-$Version = "2013-08-01";
-$ResponseGroup = "ItemAttributes,Offers";
-//User interface provides values
-//for $SearchIndex and $Keywords
+// The region you are interested in
+$endpoint = "webservices.amazon.com";
 
-//Define the request
-$request=
-     "http://webservices.amazon.com/onca/xml"
-   . "?Service=AWSECommerceService"
-   . "&AssociateTag=" . Associate_tag
-   . "&AWSAccessKeyId=" . Access_Key_ID
-   . "&Operation=" . $Operation
-   . "&Version=" . $Version
-   . "&SearchIndex=" . $SearchIndex
-   . "&Keywords=" . $Keywords
-   . "&Signature=" . [Request Signature]
-   . "&ResponseGroup=" . $ResponseGroup;
+$uri = "/onca/xml";
 
-//Catch the response in the $response object
-$response = file_get_contents($request);
-$parsed_xml = simplexml_load_string($response);
-printSearchResults($parsed_xml, $SearchIndex);
+$params = array(
+    "Service" => "AWSECommerceService",
+    "Operation" => "ItemSearch",
+    "AWSAccessKeyId" => "AKIAI2WAASHANPIJSOZA",
+    "AssociateTag" => "baarha-20",
+    "SearchIndex" => "All",
+    "Keywords" => "apple watch",
+    "ResponseGroup" => "Images,ItemAttributes,Offers"
+);
+
+// Set current timestamp if not set
+if (!isset($params["Timestamp"])) {
+    $params["Timestamp"] = gmdate('Y-m-d\TH:i:s\Z');
 }
+
+// Sort the parameters by key
+ksort($params);
+
+$pairs = array();
+
+foreach ($params as $key => $value) {
+    array_push($pairs, rawurlencode($key)."=".rawurlencode($value));
+}
+
+// Generate the canonical query
+$canonical_query_string = join("&", $pairs);
+
+// Generate the string to be signed
+$string_to_sign = "GET\n".$endpoint."\n".$uri."\n".$canonical_query_string;
+
+// Generate the signature required by the Product Advertising API
+$signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key, true));
+
+// Generate the signed URL
+$request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
+
+echo "Signed URL: \"".$request_url."\"";
+
 ?>
