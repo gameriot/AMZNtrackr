@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Product Search</title>
+		<title>Price Tracker</title>
 		<meta charset="utf-8" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
