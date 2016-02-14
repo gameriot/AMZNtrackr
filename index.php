@@ -1,8 +1,5 @@
 <!DOCTYPE HTML>
 
-<?php
-$itemname = "";
-?>
 <html>
 	<head>
 		<title>Product Search</title>
@@ -31,6 +28,7 @@ $itemname = "";
 							    Email: <input type="text" name="email" /><br />
 							    <input type="submit" name="submit" value="Submit me!" />
 							</form>
+
 							<!-- <p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
 							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
 							<p><input type="button" value="track" onclick="Submit()" /></p> -->

@@ -10,15 +10,13 @@ $endpoint = "webservices.amazon.com";
 
 $uri = "/onca/xml";
 
-$item = echo $_GET["product"];
-
 $params = array(
     "Service" => "AWSECommerceService",
     "Operation" => "ItemSearch",
     "AWSAccessKeyId" => "AKIAI2WAASHANPIJSOZA",
     "AssociateTag" => "baarha-20",
     "SearchIndex" => "All",
-    "Keywords" => $item,
+    "Keywords" => $_POST["product"],
     "ResponseGroup" => "Images,ItemAttributes,Offers"
 );
 
