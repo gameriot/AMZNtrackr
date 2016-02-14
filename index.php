@@ -52,7 +52,7 @@ $itemname = "";
 					window.alert("You have said your email is " + email + ".");
 					//window.location="trackpage.html";
 
-					$.get("http://172.30.3.133/AmazonSearch.php?name="+name, function( data ) {
+					$.get("http://172.30.3.133/AmazonSearch.php?Keywords="+name, function( data ) {
 					  alert(data);
 					});
 
