@@ -48,7 +48,7 @@ $itemname = "";
 				function Submit() {
 					var name = document.getElementById("itemname").value;
 					var email = document.getElementById("email").value;
-					window.alert("You have said your name is " + name + ".");
+					window.alert("You have said the product name is " + name + ".");
 					window.alert("You have said your email is " + email + ".");
 					//window.location="trackpage.html";
 
