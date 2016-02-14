@@ -46,8 +46,13 @@ $signature = base64_encode(hash_hmac("sha256", $string_to_sign, $aws_secret_key,
 // Generate the signed URL
 $request_url = 'http://'.$endpoint.$uri.'?'.$canonical_query_string.'&Signature='.rawurlencode($signature);
 
-// echo "Signed URL: \"".$request_url."\"";
-header('Content-type: text/xml');
-$file = file_get_contents($request_url);
-echo $file;
+echo "Signed URL: \"".$request_url."\"";
+//header('Content-type: text/xml');
+$file = simplexml_load_file($request_url );
+print_r($file->Items->Item->ItemLinks->ItemLink->URL);
+$price=($file->Items->Item->ItemAttributes->ListPrice->FormattedPrice);
+print_r($price);
+$image=($file->Items->Item->LargeImage->URL);
+print_r($image);
+
 ?>

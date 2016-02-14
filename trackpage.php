@@ -19,7 +19,8 @@
 				<!-- Main -->
 					<section id="track">
 						<header>
-							<h1>Choose Your Product</h1>
+							<h1>Choosing your Product</h1>
+							<p>The product you have chosen is + </p>
 						</header>
 					</section>
 
