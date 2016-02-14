@@ -26,9 +26,14 @@ $itemname = "";
 						<header>
 							<h1>Welcome</h1>
 							<p>Search for a product you would like to track. <br> We will notify you if there are any changes in its price.</p>
-							<p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
+							<form action="AmazonSearch.php" method="post">
+							    Product:  <input type="text" name="product" /><br />
+							    Email: <input type="text" name="email" /><br />
+							    <input type="submit" name="submit" value="Submit me!" />
+							</form>
+							<!-- <p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
 							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
-							<p><input type="button" value="track" onclick="Submit()" /></p>
+							<p><input type="button" value="track" onclick="Submit()" /></p> -->
 
 						</header>
 					</section>
@@ -50,11 +55,7 @@ $itemname = "";
 					var email = document.getElementById("email").value;
 					window.alert("You have said the product name is " + name + ".");
 					window.alert("You have said your email is " + email + ".");
-					//window.location="trackpage.html";
-
-					$.get("http://172.30.3.133/AmazonSearch.php?Keywords="+name, function( data ) {
-					  alert(data);
-					});
+					window.location="trackpage.html";
 
 
 				}
@@ -63,8 +64,8 @@ $itemname = "";
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
-
 			</script>
+
 
 	</body>
 </html>

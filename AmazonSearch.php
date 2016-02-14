@@ -1,7 +1,4 @@
 <?php
-
-$Keywords=$_GET["name"]
-
 // Your AWS Access Key ID, as taken from the AWS Your Account page
 $aws_access_key_id = "AKIAI2WAASHANPIJSOZA";
 
@@ -13,13 +10,15 @@ $endpoint = "webservices.amazon.com";
 
 $uri = "/onca/xml";
 
+$item = echo $_GET["product"];
+
 $params = array(
     "Service" => "AWSECommerceService",
     "Operation" => "ItemSearch",
     "AWSAccessKeyId" => "AKIAI2WAASHANPIJSOZA",
     "AssociateTag" => "baarha-20",
     "SearchIndex" => "All",
-    "Keywords" => $Keywords,
+    "Keywords" => $item,
     "ResponseGroup" => "Images,ItemAttributes,Offers"
 );
 
