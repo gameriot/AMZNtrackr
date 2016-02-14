@@ -20,8 +20,9 @@
 					<section id="track">
 						<header>
 							<h1>Choosing your Product</h1>
-							<p>The product you have chosen is</p>
-							<?php require 'AmazonSearch.php';?>
+							<?php 
+							echo("The product you have chosen is ") + $_POST["product"];
+							?>
 						</header>
 					</section>
 

@@ -49,7 +49,7 @@
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
 				function Submit() {
-					window.location="trackpage.html";
+					window.location="trackpage.php";
 				}
 
 				if ('addEventListener' in window) {
