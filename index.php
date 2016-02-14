@@ -26,12 +26,8 @@
 							<form action="AmazonSearch.php" method="post">
 							    <input type="text" name="product" placeholder="Product" /><br />
 							    <input type="text" name="email" placeholder="Email" /><br />
-							    <input type="button" name="submit" value="Search" onclick="Submit()" />
+							    <input type="submit" name="submit" value="Search" />
 							</form>
-
-							<!-- <p><input type="text" input id="itemname" type="search" placeholder="Item Name" /></p>
-							<p><input type="text" input id="email" type="search" placeholder="Email" /></p>
-							<p><input type="button" value="track" onclick="Submit()" /></p> -->
 
 						</header>
 					</section>
@@ -48,9 +44,9 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
-				function Submit() {
-					window.location="trackpage.php";
-				}
+				// function Submit() {
+				// 	window.location="trackpage.php";
+				// }
 
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });

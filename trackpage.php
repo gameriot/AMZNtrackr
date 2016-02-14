@@ -10,6 +10,8 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" type="image/x-icon" href="Logo.png" />
+
 	</head>
 	<body class="is-loading">
 
@@ -20,8 +22,10 @@
 					<section id="track">
 						<header>
 							<h1>Choosing your Product</h1>
+							<p>The product you have chosen is</p>
 							<?php 
-							echo("The product you have chosen is ") + $_POST["product"];
+							require 'AmazonSearch.php';
+							echo $name;
 							?>
 						</header>
 					</section>
