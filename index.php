@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Product Search</title>
+		<title>Price Tracker</title>
 		<meta charset="utf-8" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,15 +44,35 @@
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
 			<script>
-				// function Submit() {
-				// 	window.location="trackpage.php";
-				// }
 
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
+
+			<!-- <?php 
+				$servername = "localhost";
+		        $username = "pi";
+		        $password = "codeday";
+		        $dbname = "users";
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
+
+				// Check connection
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				} 
+
+				$sql = "INSERT INTO Users (Email)
+				VALUES ("+$email+")";
+
+				if ($conn->query($sql) === TRUE) {
+				} else {
+				    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+			?> -->
 
 
 	</body>

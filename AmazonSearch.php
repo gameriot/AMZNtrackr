@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Track</title>
+    <title>Choose Product</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
@@ -78,24 +78,87 @@
   //header('Content-type: text/xml');
   $file = simplexml_load_file($request_url );
   // print($file->Items->Item->ItemLinks->ItemLink->URL);
-  $price=($file->Items->Item->ItemAttributes->ListPrice->FormattedPrice);
-  // print($price);
-  $image=($file->Items->Item->LargeImage->URL);
-  // print($image);
-  $name=($file->Items->Item->ItemAttributes->Title);
-  // print($name);
+  // $price=($file->Items->Item->Offers->Offer->OfferListing->Price->FormattedPrice);
+  // $saleprice=($file->Items->Item->Offers->Offer->OfferListing->SalePrice->FormattedPrice);
+  // if (isset($saleprice)) {
+  //   $price=$saleprice;
+  // } else {
+  // }   
+  
+
+  // // print($price);
+  // $image=($file->Items->Item->LargeImage->URL);
+  // // print($image);
+  // $name=($file->Items->Item->ItemAttributes->Title);
+  // // print($name);
+
+//             $servername = "localhost";
+//             $username = "pi";
+//             $password = "codeday";
+//             $dbname = "users";
+
+//         // Create connection
+//         $conn = new mysqli($servername, $username, $password, $dbname);
+
+//         // Check connection
+//         if ($conn->connect_error) {
+//             die("Connection failed: " . $conn->connect_error);
+//         } 
+
+//         $sql = "INSERT INTO Users (Email, Product, Price)
+//         VALUES ($email, $name, $price)";
+
+//         if ($conn->query($sql) === TRUE) {
+//         } else {
+//             echo "Error: " . $sql . "<br>" . $conn->error;
+// }
 ?>
 
 <!-- Wrapper -->
       <div id="wrapper">
 
         <!-- Main -->
-          <section id="track">
+        <?php
+        echo "<a href='".$request_url."' target='_new'>xml document</a>";
+        $i = 0; 
+        foreach ($file->Items->children() as $key ) {
+          # code...
+          if ($i++ < 4){ 
+            continue;
+          }
+          $price=($key->Offers->Offer->OfferListing->Price->FormattedPrice);
+          $saleprice=($key->Offers->Offer->OfferListing->SalePrice->FormattedPrice);
+          if (isset($saleprice)) {
+            $price=$saleprice;
+          } else {
+          } 
+
+         $url=($key->DetailPageURL);
+         $image=($key->LargeImage->URL);
+         $name=($key->ItemAttributes->Title);
+
+         echo "<section id='track'>";
+         echo "<header>";
+         echo "<h1>".$name."</h1>";
+         echo "<p>The product you have chosen is ".$name.".</p>";
+         echo "<p>Currently, the price is ".$price.".</p>";
+         echo "<a href='".$url."'><img src='".$image."'></a>";
+         echo "</header>";
+         echo "</section>";
+         echo "<div style='height:15px'></div>";
+        }
+        ?>
+          <!-- <section id="track">
             <header>
               <h1>Choosing your Product</h1>
-              <?php echo "<p>The product you have chosen is ".$name.".</p>";?>
+              <?php
+              echo "<a href='".$request_url."' target='_new'>xml document</a>"; 
+              echo "<p>The product you have chosen is ".$name.".</p>";
+              echo "<p>Currently, the price is ".$price.".</p>";
+              echo "<img src='".$image."'>"?>
+
             </header>
-          </section>
+          </section> -->
 
         <!-- Footer -->
           <footer id="footer">
