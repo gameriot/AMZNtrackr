@@ -78,6 +78,7 @@
   //header('Content-type: text/xml');
   $file = simplexml_load_file($request_url );
   // print($file->Items->Item->ItemLinks->ItemLink->URL);
+<<<<<<< HEAD
   // $price=($file->Items->Item->Offers->Offer->OfferListing->Price->FormattedPrice);
   // $saleprice=($file->Items->Item->Offers->Offer->OfferListing->SalePrice->FormattedPrice);
   // if (isset($saleprice)) {
@@ -112,6 +113,33 @@
 //         } else {
 //             echo "Error: " . $sql . "<br>" . $conn->error;
 // }
+=======
+  $price=($file->Items->Item->Offers->Offer->OfferListing->Price->FormattedPrice);
+  $saleprice=($file->Items->Item->Offers->Offer->OfferListing->SalePrice->FormattedPrice);
+  if (isset($saleprice)) {
+    $price=$saleprice;
+  } else {
+  }   
+  
+
+  // print($price);
+  $image=($file->Items->Item->LargeImage->URL);
+  // print($image);
+  $name=($file->Items->Item->ItemAttributes->Title);
+  // print($name);
+
+            $servername = "localhost";
+            $username = "pi";
+            $password = "codeday";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+>>>>>>> origin/master
 ?>
 
 <!-- Wrapper -->
@@ -151,9 +179,13 @@
           <!-- <section id="track">
             <header>
               <h1>Choosing your Product</h1>
+<<<<<<< HEAD
               <?php
               echo "<a href='".$request_url."' target='_new'>xml document</a>"; 
               echo "<p>The product you have chosen is ".$name.".</p>";
+=======
+              <?php echo "<p>The product you have chosen is ".$name.".</p>";
+>>>>>>> origin/master
               echo "<p>Currently, the price is ".$price.".</p>";
               echo "<img src='".$image."'>"?>
 

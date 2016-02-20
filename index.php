@@ -51,6 +51,7 @@
 				}
 			</script>
 
+<<<<<<< HEAD
 			<!-- <?php 
 				$servername = "localhost";
 		        $username = "pi";
@@ -59,11 +60,21 @@
 
 				// Create connection
 				$conn = new mysqli($servername, $username, $password, $dbname);
+=======
+			<?php 
+				$servername = "localhost";
+		        $username = "pi";
+		        $password = "codeday";
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password);
+>>>>>>> origin/master
 
 				// Check connection
 				if ($conn->connect_error) {
 				    die("Connection failed: " . $conn->connect_error);
 				} 
+<<<<<<< HEAD
 
 				$sql = "INSERT INTO Users (Email)
 				VALUES ("+$email+")";
@@ -73,6 +84,9 @@
 				    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 			?> -->
+=======
+			?>
+>>>>>>> origin/master
 
 
 	</body>
